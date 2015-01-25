@@ -61,11 +61,21 @@
               setModalTitle(videoTitle);
             }
 
-            resizeModal(getClientWidth());
+			if (isMobile()) {
+	            resizeModal(getClientWidth() * (9/10));
+			} else {
+	            resizeModal(options.width);
+		    }
 
             //Setup YouTube Modal
             var YouTubeURL = getYouTubeUrl(youtubeId, options);
-            var YouTubePlayerIframe = getYouTubePlayer(YouTubeURL, getClientWidth(), getClientWidth() * (2/3));
+            var YouTubePlayerIframe;
+			if (isMobile()) {
+	            YouTubePlayerIframe = getYouTubePlayer(YouTubeURL, getClientWidth(), getClientWidth() * (2/3));
+			} else {
+	            YouTubePlayerIframe = getYouTubePlayer(YouTubeURL, options.width, options.height);
+		    }
+
             setModalBody(YouTubePlayerIframe);
             $YouTubeModal.modal('show');
 
