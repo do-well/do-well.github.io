@@ -62,7 +62,7 @@
             }
 
 			if (isMobile()) {
-	            resizeModal(getClientWidth() - margin);
+	            resizeModal(getClientWidth() * (11/12));
 			} else {
 	            resizeModal(options.width);
 		    }
@@ -70,8 +70,9 @@
             //Setup YouTube Modal
             var YouTubeURL = getYouTubeUrl(youtubeId, options);
             var YouTubePlayerIframe;
+			
 			if (isMobile()) {
-	            YouTubePlayerIframe = getYouTubePlayer(YouTubeURL, getClientWidth() - margin, (getClientWidth() - margin) * (2/3));
+	            YouTubePlayerIframe = getYouTubePlayer(YouTubeURL, getClientWidth() * (11/12), getClientWidth()  * (11/12) * (2/3));
 			} else {
 	            YouTubePlayerIframe = getYouTubePlayer(YouTubeURL, options.width, options.height);
 		    }
@@ -91,6 +92,7 @@
     }
   };
 
+  // Whether the browser is for mobile or not
   function isMobile()
   {
      var mobileKeyWords = new Array('iPhone', 'iPod', 'BlackBerry', 'Android', 'Windows CE', 'LG', 'MOT', 'SAMSUNG', 'SonyEricsson');
@@ -102,6 +104,7 @@
 	 return false;
   }
 
+  // get Client width by Browser kind and version
   function getClientWidth() {
     var ret;
 	if (self.innerHeight) {     // IE 외 모든 브라우저

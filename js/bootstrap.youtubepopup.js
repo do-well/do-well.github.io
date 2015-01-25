@@ -61,6 +61,7 @@
               setModalTitle(videoTitle);
             }
 
+			// 2015-01-26
 			if (isMobile()) {
 	            resizeModal(getClientWidth() * (11/12));
 			} else {
@@ -70,6 +71,8 @@
             //Setup YouTube Modal
             var YouTubeURL = getYouTubeUrl(youtubeId, options);
             var YouTubePlayerIframe;
+			
+			// 2015-01-26
 			if (isMobile()) {
 	            YouTubePlayerIframe = getYouTubePlayer(YouTubeURL, getClientWidth() * (11/12), getClientWidth()  * (11/12) * (2/3));
 			} else {
@@ -91,6 +94,7 @@
     }
   };
 
+  // Whether the browser is for mobile or not
   function isMobile()
   {
      var mobileKeyWords = new Array('iPhone', 'iPod', 'BlackBerry', 'Android', 'Windows CE', 'LG', 'MOT', 'SAMSUNG', 'SonyEricsson');
@@ -102,6 +106,7 @@
 	 return false;
   }
 
+  // get Client width by Browser kind and version
   function getClientWidth() {
     var ret;
 	if (self.innerHeight) {     // IE 외 모든 브라우저
