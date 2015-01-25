@@ -61,7 +61,7 @@
               setModalTitle(videoTitle);
             }
 
-            resizeModal(options.width);
+            resizeModal(options.width/2);
 
             //Setup YouTube Modal
             var YouTubeURL = getYouTubeUrl(youtubeId, options);

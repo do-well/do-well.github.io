@@ -65,7 +65,7 @@
 
             //Setup YouTube Modal
             var YouTubeURL = getYouTubeUrl(youtubeId, options);
-            var YouTubePlayerIframe = getYouTubePlayer(YouTubeURL, options.width, options.height);
+            var YouTubePlayerIframe = getYouTubePlayer(YouTubeURL, options.width/2, options.height/2);
             setModalBody(YouTubePlayerIframe);
             $YouTubeModal.modal('show');
 
