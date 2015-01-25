@@ -61,11 +61,11 @@
               setModalTitle(videoTitle);
             }
 
-            resizeModal(options.width);
+            resizeModal(document.body.clientWidth);
 
             //Setup YouTube Modal
             var YouTubeURL = getYouTubeUrl(youtubeId, options);
-            var YouTubePlayerIframe = getYouTubePlayer(YouTubeURL, options.width, options.height);
+            var YouTubePlayerIframe = getYouTubePlayer(YouTubeURL, document.body.clientWidth, document.body.clientWidth * (2/3));
             setModalBody(YouTubePlayerIframe);
             $YouTubeModal.modal('show');
 
@@ -153,8 +153,8 @@
     useYouTubeTitle: true,
     idAttribute: 'rel',
     cssClass: 'YouTubeModal',
-    width: 640/2,
-    height: 480/2,
+    width: 640,
+    height: 480,
     autohide: 2,
     autoplay: 1,
     color: 'red',
