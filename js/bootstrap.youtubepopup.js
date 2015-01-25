@@ -61,11 +61,11 @@
               setModalTitle(videoTitle);
             }
 
-            resizeModal(document.body.clientWidth);
+            resizeModal(getClientWidth());
 
             //Setup YouTube Modal
             var YouTubeURL = getYouTubeUrl(youtubeId, options);
-            var YouTubePlayerIframe = getYouTubePlayer(YouTubeURL, document.body.clientWidth, document.body.clientWidth * (2/3));
+            var YouTubePlayerIframe = getYouTubePlayer(YouTubeURL, getClientWidth(), getClientWidth() * (2/3));
             setModalBody(YouTubePlayerIframe);
             $YouTubeModal.modal('show');
 
@@ -81,6 +81,17 @@
     }
   };
 
+  function getClientWidth() {
+    var ret;
+	if (self.innerHeight) {     // IE 외 모든 브라우저
+		ret = self.innerWidth;
+	} else if (document.documentElement && document.documentElement.clientHeight) { // Explorer 6 Strict
+		ret = document.documentElement.clientWidth;
+	} else if (document.body) {     // IE Browser
+		ret = document.body.clientWidth;
+	}
+	return ret;
+  }
   function setModalTitle(title) {
     $YouTubeModalTitle.html($.trim(title));
   }
