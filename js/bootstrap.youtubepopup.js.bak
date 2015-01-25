@@ -71,7 +71,7 @@
             var YouTubeURL = getYouTubeUrl(youtubeId, options);
             var YouTubePlayerIframe;
 			if (isMobile()) {
-	            YouTubePlayerIframe = getYouTubePlayer(YouTubeURL, getClientWidth(), getClientWidth() * (2/3));
+	            YouTubePlayerIframe = getYouTubePlayer(YouTubeURL, getClientWidth() * (9/10), getClientWidth()  * (9/10) * (2/3));
 			} else {
 	            YouTubePlayerIframe = getYouTubePlayer(YouTubeURL, options.width, options.height);
 		    }
