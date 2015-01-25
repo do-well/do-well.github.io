@@ -62,7 +62,7 @@
             }
 
 			if (isMobile()) {
-	            resizeModal(getClientWidth() - margin);
+	            resizeModal(getClientWidth() * (11/12));
 			} else {
 	            resizeModal(options.width);
 		    }
@@ -71,7 +71,7 @@
             var YouTubeURL = getYouTubeUrl(youtubeId, options);
             var YouTubePlayerIframe;
 			if (isMobile()) {
-	            YouTubePlayerIframe = getYouTubePlayer(YouTubeURL, getClientWidth() - margin, (getClientWidth() - margin) * (2/3));
+	            YouTubePlayerIframe = getYouTubePlayer(YouTubeURL, getClientWidth() * (11/12), getClientWidth()  * (11/12) * (2/3));
 			} else {
 	            YouTubePlayerIframe = getYouTubePlayer(YouTubeURL, options.width, options.height);
 		    }
